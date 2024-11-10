@@ -25,8 +25,8 @@ rysio
 ## Algorithms to be implemented and tested
 ### ISAC
 rysio
-### MASC
-marcin
+### MASAC: Multi Agent adaptation of Soft Actor Critic Reinforcement Learning Algorithm
+MASAC is an extension of the Soft Actor-Critic (SAC) reinforcement learning algorithm, adapted for multi-agent environments. SAC is a popular model-free, off-policy algorithm that combines elements of both maximum entropy reinforcement learning and Q-learning, aiming to achieve both stability and high exploration. MASAC builds on this approach by allowing multiple agents to learn simultaneously in a shared environment, where each agent optimizes its own policy while considering interactions with other agents.
 ## Necessary libraries
 tbd
 ## Experiment propositions
