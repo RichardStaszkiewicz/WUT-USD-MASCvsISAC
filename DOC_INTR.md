@@ -30,7 +30,9 @@ MASAC is an extension of the Soft Actor-Critic (SAC) reinforcement learning algo
 ## Necessary libraries
 tbd
 ## Experiment propositions
-marcin - choice
-### Cooperative
-### Competative
-### sth else form the list random
+### Collaborative Cooking - Cooperative
+In this scenario, agents work together in a kitchen setting to prepare and serve food items. They must coordinate their actions to complete tasks efficiently, such as gathering ingredients, cooking, and serving dishes within a time limit. Success depends on effective teamwork and sharing resources. This environment encourages agents to optimize collective outcomes, making it an example of a cooperative problem
+### Chicken in the matrix: Arena - Competitive
+Individuals can gather resources of different colors. Players’ encounters are resolved with thesame payout matrix as the game ’Chicken’, in which both players attempting to take advantage of the other leads to the worst outcome for both. Collecting red resources pushes one’s strategy choice toward playing ‘hawk‘ while collecting green resources pushes it toward playing ‘dove‘.
+### Allelopathic Harvest - Mixed (Primarily Cooperative with Competitive Elements)
+Clean Up is a seven player game. Players are rewarded for collecting apples (reward +1). In Clean Up, apples grow in an orchard at a rate inversely related to the cleanliness of a nearby river. The river accumulates pollution at a constant rate. Beyond a certain threshold of pollution, the apple growth rate in the orchard drops to zero. Players have an additional action allowing them to clean a small amount of pollution from the river. However, the cleaning action only works on pollution within a small distance in front of the agents, requiring them to physically leave the apple or chard to clean the river. Thus, players maintain a public good of orchard regrowth through effortful contributions. Players are also able to zap others with a beam that removes any player hit from the game for 50 steps.
