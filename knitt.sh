@@ -1,0 +1,1 @@
+pandoc --listings -H listings-setup.tex -V fontsize=11pt -V lang=pl DOC_INTR.md -o sprawozdanie.pdf
