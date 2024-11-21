@@ -1,6 +1,6 @@
 # MASAC vs ISAC
-## Project assumtions
-TBD - rysio
+## Project assumptions
+The project aims to evaluate and compare the performance of ISAC and MASAC algorithms in various multi-agent reinforcement learning (MARL) environments, focusing on scenarios that emphasize cooperation, competition, and mixed dynamics. The core assumption is that ISAC's independent learning structure and entropy-regularized exploration will provide advantages in adaptability and stability compared to MASAC’s shared-environment optimization. Additionally, Melting Pot’s diverse scenarios will help test generalization capabilities effectively.
 ## Project environmment
 ### Software
 #### BenchMARL: Multi-Agent Reinforcement Learning Library
@@ -21,14 +21,22 @@ Melting Pot evaluates how well agents generalize to new social environments, inc
 
 ### Technical realisation
 Python scripts for experiments and Notebooks for visualisation
-rysio
+
 ## Algorithms to be implemented and tested
 ### ISAC
-rysio
+Soft Actor-Critic (SAC) is a model-free RL algorithm that combines off-policy learning with entropy regularization to encourage exploration and stabilize learning. It extends SAC for multi-agent scenarios, allowing agents to independently optimize their policies while optionally sharing critic parameters within agent groups. The algorithm uses entropy to measure policy randomness and incorporates it into the loss function. 
+The policy induction process in the ISAC algorithm involves constructing a probabilistic policy tailored to the action space—continuous or discrete—by leveraging neural networks to map states to probability distributions over actions. For continuous actions, the policy generates parameters (mean and scale) for distributions like IndependentNormal or TanhNormal, ensuring bounded actions when needed. For discrete actions, logits are passed into distributions such as Categorical or MaskedCategorical, accommodating optional action constraints. The policy is trained to maximize the soft Q-function while encouraging exploration through entropy regularization, with the trade-off governed by an entropy coefficient (α) that can be fixed or learned.
+
 ### MASAC: Multi Agent adaptation of Soft Actor Critic Reinforcement Learning Algorithm
 MASAC is an extension of the Soft Actor-Critic (SAC) reinforcement learning algorithm, adapted for multi-agent environments. SAC is a popular model-free, off-policy algorithm that combines elements of both maximum entropy reinforcement learning and Q-learning, aiming to achieve both stability and high exploration. MASAC builds on this approach by allowing multiple agents to learn simultaneously in a shared environment, where each agent optimizes its own policy while considering interactions with other agents.
 ## Necessary libraries
-tbd
+* PyTorch: For deep learning model implementations.
+* TorchRL: For reinforcement learning utilities and environment handling.
+* BenchMARL: To provide the MARL framework for standardized benchmarking.
+* Melting Pot: For diverse testing substrates and social interaction scenarios.
+* NumPy and Matplotlib: For data processing and visualization.
+* Seaborn: For advanced statistical data visualizations in the analysis phase.
+* Jupyter Notebooks: For interactive experimentation and result presentation.
 ## Experiment propositions
 ### Collaborative Cooking - Cooperative
 In this scenario, agents work together in a kitchen setting to prepare and serve food items. They must coordinate their actions to complete tasks efficiently, such as gathering ingredients, cooking, and serving dishes within a time limit. Success depends on effective teamwork and sharing resources. This environment encourages agents to optimize collective outcomes, making it an example of a cooperative problem
